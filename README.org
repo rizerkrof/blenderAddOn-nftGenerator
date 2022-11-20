@@ -1,1 +1,46 @@
-#+title: Readme
+#+TITLE: NFT generator blender add-on
+#+DATE:    20/11/2022
+#+STARTUP: inlineimages nofold
+
+* Table of Contents :TOC_3:noexport:
+- [[#description][Description]]
+  - [[#maintainers][Maintainers]]
+- [[#prerequisites][Prerequisites]]
+- [[#configuration][Configuration]]
+  - [[#installation][Installation]]
+  - [[#add-on-tweaks][Add-on tweaks]]
+
+* Description
+This is a blender add-on that allows 3D assets random combination generation. Very useful for NFTs collection generation. The add-on also generates metadata for each combination generated.
+
++ Generates combination of props
++ Tweak the rarity of certain props
++ Customize your collection metadata
+
+** Maintainers
++ [[https://github.com/rizerkrof][@rizerkrof]] (Author)
+
+* Prerequisites
++ Blender 3.3.1
+
+* Configuration
+** Installation
+1) Download the add-on
+    If you are on linux system, enter the following command on a terminal:
+    #+begin_src sh
+curl -L https://github.com/rizerkrof/blenderAddOn-nftGenerator/archive/main.zip -o nft-add-on.zip
+    #+end_src
+    Or download the ~.zip~ archive [[https://github.com/rizerkrof/blenderAddOn-nftGenerator/archive/refs/heads/main.zip][HERE]].
+2) Install the add-On
+   Open blender and go to ~Edit/Preferences/Add-ons~ then browse the .zip file you just downloaded by clicking on ~Install...~ .
+3) Enable the add-on
+   Check the toggle box of the add-on.
+** Add-on tweaks
+On the ~Properties~ editor under ~Scene Propoerties~ you should see the ~NFTs generator~ panel.
+1) Add attributes collections and props
+2) Analyze the scene
+3) Fulfill the metadata
+4) Chose the generation number
+5) Generate the combinations
+6) Render the animation (~Ctrl F12~) with image format selected on ~Output properties~
+7) The metadata of each file will be available at ~metadata/~ folder at your blender project folder
