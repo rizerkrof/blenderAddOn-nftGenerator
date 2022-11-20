@@ -26,7 +26,7 @@ This is a blender add-on that allows 3D assets random combination generation. Ve
 * Configuration
 ** Installation
 1) Download the add-on
-    If you are on linux system, enter the following command on a terminal:
+   If you are on linux system, enter the following command on a terminal:
     #+begin_src sh
 curl -L https://github.com/rizerkrof/blenderAddOn-nftGenerator/archive/main.zip -o nft-add-on.zip
     #+end_src
