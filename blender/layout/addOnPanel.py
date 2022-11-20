@@ -3,7 +3,7 @@ import bpy
 from ..utils.blenderUtils import isAttributeCollection
 
 class AddOnPanel(bpy.types.Panel):
-	bl_label='Raptor Generator Free'
+	bl_label='NFT Generator'
 	bl_idname='SCENE_PT_layout'
 	bl_space_type='PROPERTIES'
 	bl_region_type='WINDOW'
