@@ -57,10 +57,10 @@ class Generate(bpy.types.Operator):
 		generatedCombination['description'] = self.description
 		generatedCombination['image'] = f'{self.image}{self.keyframeIndex}{self.imageFormat}'
 		generatedCombination['attributes']=[]
+		print('=============================', self.keyframeIndex)
 		for attributeIndex, attribute in enumerate(self.filteredAttributes):
 			rndRarity=random.randrange(0,self.randomBracketsMax[attributeIndex])
 			rndAttributeValue=self.findObjectNameInBrackets(rndRarity,attributeIndex,attribute)
-			print('=============================', self.keyframeIndex)
 			print(attribute, rndAttributeValue)
 			for attributeValue in self.attributeStorage[attribute]:
 				if attributeValue==rndAttributeValue:
@@ -117,23 +117,22 @@ class Generate(bpy.types.Operator):
 		bpy.context.scene.objects[objectName].hide_viewport=True
 
 	def createPickRandomBrackets(self, traitSettings):
-		attributesCommonness=[];
+		attributesCommonness=[]
+		count=0
 		for attribute in self.filteredAttributes:
 			attributeCommonness=[]
-			for attributeValueIndex, attributeValue in enumerate(bpy.data.collections[attribute].children.keys()):
-				I=bpy.data.collections[attribute].children[attributeValue].all_objects
-				attributeValueRarity=traitSettings[attributeValueIndex].rarity
+			for attributeValue in bpy.data.collections[attribute].children.keys():
+				attributeValueRarity=traitSettings[count].rarity
+				print(attributeValueRarity)
 				attributeCommonness.append(100-attributeValueRarity)
+				count+=1
 			attributesCommonness.append(attributeCommonness)
 		return attributesCommonness
 
 	def createMaxOfBrackets(self, randomBrackets):
 		maxBrackets=[]
 		for attributeCommonness in randomBrackets:
-			sum=0
-			for attributeValueCommonness in attributeCommonness:
-				sum+=attributeValueCommonness
-			maxBrackets.append(sum)
+			maxBrackets.append(sum(attributeCommonness))
 		return maxBrackets
 
 	def findObjectNameInBrackets(self, rndIndex, attributeIndex, attributeName):

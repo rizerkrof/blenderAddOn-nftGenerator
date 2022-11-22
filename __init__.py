@@ -3,7 +3,7 @@ import sys
 sys.path.insert(0, sys.path[0]+'/')
 import bpy
 from bpy.props import PointerProperty, CollectionProperty
-from .blender import AddOnPanel, MetadataProperties, AttributesProperties, Analyze, Generate
+from .nftGeneratorAddOn import AddOnPanel, MetadataProperties, AttributesProperties, Analyze, Generate
 
 bl_info = {
     "name": "NFT random generator",
