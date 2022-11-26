@@ -26,6 +26,7 @@ class AddOnPanel(bpy.types.Panel):
 		self.layout.prop(context.scene.generatorSettings, 'image')
 		self.layout.prop(context.scene.generatorSettings, 'imageFormat')
 		self.layout.prop(context.scene.generatorSettings,'desiredIterations')
+		self.layout.prop(context.scene.generatorSettings, 'randomSeed')
 		analyzeButtonRow = self.layout.row()
 		analyzeButtonRow.scale_y=3.0
 		analyzeButtonRow.operator('wm.analyze_operator')
