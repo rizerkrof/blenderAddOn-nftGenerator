@@ -20,6 +20,7 @@ class Generate(bpy.types.Operator):
 		self.description = context.scene.generatorSettings.description
 		self.image = context.scene.generatorSettings.image
 		self.imageFormat = context.scene.generatorSettings.imageFormat
+		self.randomSeed = context.scene.generatorSettings.randomSeed
 		for action in bpy.data.actions:
 			bpy.data.actions.remove(action)
 		self.filteredAttributes=list(filter(isAttributeCollection, bpy.data.collections.keys()))
@@ -43,6 +44,7 @@ class Generate(bpy.types.Operator):
 		context.scene.frame_end=nIteration
 		context.scene.frame_start=1
 		iteration=0
+		random.seed(self.randomSeed)
 		while iteration<nIteration:
 			if self.generate():
 				iteration+=1

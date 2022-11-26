@@ -8,3 +8,4 @@ class MetadataProperties(PropertyGroup):
 	description:StringProperty(name='Description')
 	image:StringProperty(name='Image URI base link')
 	imageFormat:StringProperty(name='Image format')
+	randomSeed:IntProperty(name='Random seed', description='The seed used to the random generation. Usefull to regenerate metadata', default=0, min=0 )
