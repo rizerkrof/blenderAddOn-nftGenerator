@@ -57,7 +57,7 @@ class Generate(bpy.types.Operator):
 		generatedCombination={}
 		generatedCombination['name'] = f'{self.nameOfObjects} {self.keyframeIndex:04}'
 		generatedCombination['description'] = self.description
-		generatedCombination['image'] = f'{self.image}{self.keyframeIndex}{self.imageFormat}'
+		generatedCombination['image'] = f'{self.image}{self.keyframeIndex:04}{self.imageFormat}'
 		generatedCombination['attributes']=[]
 		print('=============================', self.keyframeIndex)
 		for attributeIndex, attribute in enumerate(self.filteredAttributes):
